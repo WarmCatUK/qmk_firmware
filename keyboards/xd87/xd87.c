@@ -41,16 +41,16 @@ void led_init_ports(void) {
     // Set caps lock LED pin as output
     DDRE |= (1 << 2);
     // Default to off
-    PORTE &= ~(1 << 2);
+    //PORTE &= ~(1 << 2);
 }
 
 void led_set_kb(uint8_t usb_led) {
   // put your keyboard LED indicator (ex: Caps Lock LED) toggling code here
     if (usb_led & (1 << USB_LED_CAPS_LOCK)) {
-        //DDRE &= ~(1 << 2);
+        register_code(KC_C);
         PORTE &= ~(1 << 2);
     } else {
-        //DDRE |= (1 << 2);
+        register_code(KC_O);
         PORTE |= (1 << 2);
     }
   led_set_user(usb_led);

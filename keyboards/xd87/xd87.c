@@ -47,10 +47,10 @@ void led_init_ports(void) {
 void led_set_kb(uint8_t usb_led) {
   // put your keyboard LED indicator (ex: Caps Lock LED) toggling code here
     if (usb_led & (1 << USB_LED_CAPS_LOCK)) {
-        register_code(KC_C);
+        //register_code(KC_C); //to test if this actually gets executed (it doesnt)
         PORTE &= ~(1 << 2);
     } else {
-        register_code(KC_O);
+        //register_code(KC_O); //to test if this actually gets executed (it doesnt)
         PORTE |= (1 << 2);
     }
   led_set_user(usb_led);

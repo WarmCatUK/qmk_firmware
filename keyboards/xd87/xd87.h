@@ -20,8 +20,8 @@
 #include "led.h"
 
 // Functions for setting LEDs on toggle keys
-inline void caps_led_on(void)     { DDRE |=  (1<<2); PORTE |= (1<<2); }
-inline void caps_led_off(void)    { DDRE |=  (1<<2); PORTE &= ~(1<<2); }
+inline void caps_led_on(void)     { DDRE |=  (1<<2); PORTE &= ~(1<<2); }
+inline void caps_led_off(void)    { DDRE |=  (1<<2); PORTE |= (1<<2); }
 
 #define LAYOUT_all( \
     K00, K01, K02, K03, K04, K05, K06, K07, K08, K09, K0A, K0B, K0C, K0D,      K0E, K0F, K0G, \
